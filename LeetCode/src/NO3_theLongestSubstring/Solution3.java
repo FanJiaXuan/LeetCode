@@ -14,7 +14,7 @@ public class Solution3 {
 			if(m.containsKey(s.charAt(j))){//遇到重复的了
 				i = Math.max(m.get(s.charAt(j)), i);//i 向右跳动
 			}//不重复 可以放入
-			//但下面这两行不是很理解
+			//但下面这两行不是很理解 我还是更喜欢solution2
 				ans = Math.max(ans, j - i + 1);
 				m.put(s.charAt(j), j + 1);
 		}

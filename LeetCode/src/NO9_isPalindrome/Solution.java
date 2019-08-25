@@ -2,6 +2,7 @@ package NO9_isPalindrome;
 
 public class Solution {
 	public boolean isPalindrome(int x) {
+		
         String str = String.valueOf(x);
         char []a = str.toCharArray();
         int s = 0;

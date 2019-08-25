@@ -47,7 +47,7 @@ public class i_Loading {
 			cw -= w[t];//不装
 		}
 		
-		if(cw + r > bestw){//剪枝后不装上的情况
+		if(cw + r > bestw){//剪枝后 可以装上的情况
 			x[t] = 0;
 			backtrack(t + 1);
 		}

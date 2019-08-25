@@ -35,7 +35,7 @@ public class backpack {
 	//参数t 代表从第几个节点开始 也可以说是树的第几层
 	public double maxBound(int t){
 		double left = max - c_weight;
-		double bound = c_value;
+		double bound = c_value;//bound 就是返回的潜力值
 		
 		while(t < n && weight[t] <= left){
 			left -= weight[t];
@@ -73,7 +73,7 @@ public class backpack {
 	                   addLiveNode(upbound, c_value + value[i], c_weight + weight[i], i + 1);
 	               }
 	              upbound = maxBound(i + 1);
-	              if (upbound >= bestv) // 右子树可能含最优解
+	              if(upbound >= bestv) // 右子树可能含最优解
 	                   addLiveNode(upbound, c_value, c_weight, i + 1);
 	               if (heap.empty())
 	                   return bestv;

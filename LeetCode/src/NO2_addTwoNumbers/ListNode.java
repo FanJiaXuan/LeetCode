@@ -8,5 +8,14 @@ public class ListNode {
 			val = x;
 		}
 
-
+ @Override
+public String toString() {
+// TODO Auto-generated method stub
+	 ListNode p = this;
+	 while(p != null){
+		 System.out.println(p.val);
+		 p = p.next;
+	 }
+	 return "ok";
+}
 }
