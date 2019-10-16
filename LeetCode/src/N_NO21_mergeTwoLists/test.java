@@ -11,7 +11,7 @@ public class test {
 		l2.next.next =  new ListNode(4);
 		
 		Solution s = new Solution();
-		System.out.println(s.mergeTwoLists(l1, l2));
+		s.mergeTwoLists(l1, l2));
 		
 	}
 }

@@ -10,7 +10,7 @@ public class Solution2 {
 		List<List<Integer>> res = new ArrayList<>();
 		Arrays.sort(nums);//先排序
 		//然后从左边 
-		if(nums[0] <= 0 && nums[nums.length - 1] >= 0){
+		//if(nums[0] <= 0 && nums[nums.length - 1] >= 0){
 		for(int i = 0; i < nums.length - 2; i++){
 			if(nums[i] > 0)
 				break;//没必要往后看了
@@ -43,7 +43,7 @@ public class Solution2 {
 		  }
 		}
 		
-		}
+		//}
 		return res;
 	}
 }
