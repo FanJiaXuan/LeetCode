@@ -1,41 +1,7 @@
 package weekly158;
 
-//狗屎 狗屎 终于遇到这个 递归的掷色子题 了
-//很费脑子  我稍微有点胆怯
-
-
-
-//递归
-//自己调用自己
-/*
- * die(int i, int n, int[] a, int[] rollMax)
- * 			
- * 			if(i ){
- * 				
- *					for(int i = 1; i <= 6; i++){
- *						a[i]++				 
- *						die(自己);
- *						a[i]--
- *					}
- * 
- * 
- * 
- * 
- *  				}
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- */
-
-
-
-//连续掷出 我好像理解有误  连续不能超过 而不是不能超过
-public class NO5224 {
-	 public int dieSimulator(int n, int[] rollMax) {
+public class show_ver {
+ public int dieSimulator(int n, int[] rollMax) {
 		 
 		 int[] a = {0,0,0,0,0,0,0};
 		// int count = 0;
@@ -70,40 +36,21 @@ public class NO5224 {
 		 if(i == n){//i是从0开始的 i == n 说明已经进行够了对应的轮次
 				//count++;
 			 	a[6]++;
-				//System.out.println(count);
-//				all += count;
-//				System.out.println(all);
 				return;
 		 }
 		 for(int j = 0; j < 6; j++){//进入当前轮次 轮次有6种情况
-//			 a[j]++;
-//			 if(a[j] <= rollMax[j]){
-//				 if(i + 1 == n)
-//					 count++;
-//				 die(i + 1, n, count, a, rollMax, j);
-//			 }
-//			 a[j]--;
-			 
-			 //妈的 原来是连续不能超过 我写的是 一共不能超过 该死的 日了
-			 //如果符合要求
-//			 if(a[j] + 1 <= rollMax[j]){
-//				 a[j]++;//那你就可以变化
-//				 //进入下一轮
-//				 die(i + 1, n, a, rollMax);
-//				 a[j]--;//变化回来
-//			 }
 			 //如果上一轮和这一轮点数一样 就要进入判断
 			 //怎么得到上一轮的点数？
-			 //传值把
+			 //传值吧
 			 //j + 1 是这轮扔出的点数
 			 if(last == j + 1){//我扔出的点数 和上一轮 相等
-				 a[j]++;//a[j]的值是比连续的实际次数小1的 连续两次 a[j] == 1
+				 a[j]++;//a[j]的值是比连续的实际次数小1的  连续两次 a[j] == 1
 				 if(a[j] <= rollMax[j] - 1){//判断能不能进入下一轮
 					 die(i + 1, n, a, rollMax, last);//进入下一轮
 					
 				 }//不连续的话 积累的连续就变成0
 				 //等上面的函数回来 就说明连续的扔出 已成过去
-				 a[j] = 0;//a[j] == 0 连续中断嘛
+				 a[j] = 0;//a[j] == 0  连续中断
 			 }else{//如果点数不相等
 				 die(i + 1, n, a, rollMax, j + 1);//我这轮扔出的点数是j + 1
 				 //直接扔
@@ -113,5 +60,3 @@ public class NO5224 {
 		 
 	 }
 }
-
-
